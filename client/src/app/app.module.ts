@@ -6,11 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
-import { LoginModule } from './login/login.module';
 import { ProductModule } from './product/product.module';
 import { CheckoutModule } from './checkout/checkout.module';
 import { AdminModule } from './admin/admin.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomerModule } from './customer/customer.module';
 
 
 @NgModule({
@@ -23,10 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     SharedModule,
     HomeModule,
-    LoginModule,
     ProductModule,
     CheckoutModule,
-    AdminModule
+    AdminModule,
+    CustomerModule
   ],
   exports: [SharedModule],
   providers: [],

@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductComponent } from './product/product.component';
 import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { LoginComponent } from './customer/login/login.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
-  { path: 'product/:type/:id', component: ProductComponent},
+  { path: 'product/:type/:id', component: ProductListComponent},
   // { path: 'product', component: ProductComponent},
   // { path: 'product-details/:id', component: ProductDetailsComponent},
   // { path: 'product-details', component: ProductDetailsComponent},
 
-  // { path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent},
   // { path: 'signup', component: SignupComponent},
 
 

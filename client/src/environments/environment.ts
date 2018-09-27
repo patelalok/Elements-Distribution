@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // productUrl: 'http://localhost:8080'
-  productUrl: 'http://96.73.255.162:5004'
+  productUrl: 'http://localhost:8080'
+  // productUrl: 'http://96.73.255.162:5004'
 
 
 };

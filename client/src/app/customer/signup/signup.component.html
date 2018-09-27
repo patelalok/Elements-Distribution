@@ -1,0 +1,213 @@
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+    <mat-card>
+      <form [formGroup]="customerForm">
+        <h3>Personal Information</h3>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li>
+                <label>First Name </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="text" class="form-control" formControlName="firstName">
+                <div *ngIf="customerForm.get('firstName').hasError('required') && customerForm.get('firstName').touched"
+                  class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('firstName').hasError('pattern') && customerForm.get('firstName').touched"
+                  class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>Email </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="email" class="form-control" formControlName="email">
+                <div *ngIf="customerForm.get('email').hasError('required') && customerForm.get('email').touched" class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('email').hasError('pattern') && customerForm.get('email').touched" class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>
+                <label>Last Name </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="text" class="form-control" formControlName="lastName">
+                <div *ngIf="customerForm.get('lastName').hasError('required') && customerForm.get('lastName').touched"
+                  class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('lastName').hasError('pattern') && customerForm.get('lastName').touched"
+                  class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>Phone Number </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="number" class="form-control" formControlName="phoneNo">
+                <div *ngIf="customerForm.get('phoneNo').hasError('required') && customerForm.get('phoneNo').touched"
+                  class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('phoneNo').hasError('pattern') && customerForm.get('phoneNo').touched" class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- <hr> -->
+        <h3 style="margin-top: 15px;">Address Information</h3>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li>
+                <label>Company Name </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="text" class="form-control" formControlName="companyName">
+                <div *ngIf="customerForm.get('companyName').hasError('required') && customerForm.get('companyName').touched"
+                  class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('companyName').hasError('pattern') && customerForm.get('companyName').touched"
+                  class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>Address 1 </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="text" class="form-control" formControlName="street">
+                <div *ngIf="customerForm.get('street').hasError('required') && customerForm.get('street').touched" class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('street').hasError('pattern') && customerForm.get('street').touched" class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>City </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="text" class="form-control" formControlName="city">
+                <div *ngIf="customerForm.get('city').hasError('required') && customerForm.get('city').touched" class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('city').hasError('pattern') && customerForm.get('city').touched" class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>State </label>
+                <em>*</em>
+              </li>
+              <li>
+                <select class="form-control" formControlName="state">
+                  <option *ngFor="let state of this.state" [ngValue]="state">
+                    {{state}}
+                  </option>
+  
+                </select>
+                <div *ngIf="customerForm.get('state').hasError('required') && customerForm.get('state').touched" class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('state').hasError('pattern') && customerForm.get('state').touched" class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>
+                <label>Sales Tax Id</label>
+              </li>
+              <li>
+                <input type="text" class="form-control" formControlName="taxId">
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>Address 2 </label>
+              </li>
+              <li>
+                <input type="text" placeholder="Please Enter Address 2">
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>Zipcode </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="number" class="form-control" formControlName="zipCode">
+                <div *ngIf="customerForm.get('zipCode').hasError('required') && customerForm.get('zipCode').touched"
+                  class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="customerForm.get('zipCode').hasError('pattern') && customerForm.get('zipCode').touched" class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>Country </label>
+              </li>
+              <li>
+                <input type="text" class="form-control" formControlName="country">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+  
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>
+                <button mat-button class="signup-button" [disabled]="customerForm.invalid" (click)="this.register()">Register</button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+  
+          </div>
+  
+        </div>
+      </form>
+    </mat-card>
+  
+  </div>
+  

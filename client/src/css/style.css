@@ -304,6 +304,8 @@ font-variant: normal !important;border: 2px rgba(10, 133, 216, 0.57) solid !impo
 .site-nav a{display:block;padding:12px;text-decoration:none}
 .site-nav > li{position: static;display:inline-block;list-style:none;}
 .site-nav > li > a{text-transform:uppercase;margin:16px 18px 12px;padding:0;letter-spacing:.05em}
+.site-nav > li > a >span{font-size: 16px;}
+
 .site-nav > li:first-child > a{margin-left:0}
 .site-nav > li:hover > a > span:first-child,.site-nav > li:hover > a.current > span:first-child,.site-nav > li > a.current > span:first-child{border-bottom:2px solid #fff}
 .site-nav-dropdown{text-align:left;display:none;position:absolute;top:48px;left:0;width: 100%;z-index:5;padding:0;margin-bottom:0;border:1px solid transparent;}
@@ -318,9 +320,9 @@ font-variant: normal !important;border: 2px rgba(10, 133, 216, 0.57) solid !impo
 .site-nav-dropdown ul li strong {
     text-transform: uppercase;
     padding: 10px 0 5px 0px;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
-    line-height: 28px;
+    line-height: 20px;
     display: block;
     position: relative;
     margin: 0 0% 8px 0px;

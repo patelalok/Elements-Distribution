@@ -26,6 +26,9 @@ export class ProductService {
   getProductByCategoryId(categoryId: number): Observable<Product[]> {
     return this.http.get<Product[]>(this.url + '/getProductsByCategory?categoryId=' + categoryId);
   }
+  getProductBySuBCategoryId(subCategoryId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(this.url + '/getProductsBySubCategory?subCategoryId=' + subCategoryId);
+  }
   
   addImage(productNo: string, image: any) {
 

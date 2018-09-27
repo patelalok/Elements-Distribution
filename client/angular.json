@@ -24,7 +24,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/css/owl-theme.css",
               "src/css/selectize.css",
               "src/css/component.css",
@@ -36,14 +36,8 @@
               "src/css/owl-carousel.css"
             ],
             "scripts": [
-              "src/js/lazysizes.min.js",
-              "src/js/jquery.min.js",
-              "src/js/jquery.flexslider.min.js",
-              "src/js/owl.carousel.min.js",
-              "src/js/classie.js",
-              "src/js/jquery.history.js",
-              "src/js/main.js",
-              "src/js/bootstrap.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

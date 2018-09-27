@@ -122,14 +122,31 @@
     </div>
     <nav class="nav-bar" role="navigation">                    
       <div class="container">
-        <ul class="site-nav">
-          <li class="dropdown">
+        <ul class="site-nav" *ngIf="this.menuDto">
+          <li class="dropdown" *ngFor= "let category of this.menuDto.categoryDtoList">
             <a href="#">
-              <span>Home</span>
+              <span>{{category.name}}</span>
               <span class="icon-dropdown"></span>
             </a>
             <div class="site-nav-dropdown">
               <div class="col-md-8 col-sm-9">
+                  <ul class="col-xs-6" *ngFor="let subCategory of category.subCategoryDaoList">
+                    <li >
+                      <a routerLink = "product/subCategory/51"><strong>{{subCategory.name}}</strong></a>
+                    </li>
+                    <!-- <li><a href="#">All Brands</a></li>
+                    <li><a href="#">Featured Products</a></li>
+                    <li><a href="#">Featured Brands</a></li>
+                    <li><a href="#">Featured Brands</a></li>
+                    <li><a href="#">Featured Brands</a></li>
+                    <li><a href="#">Featured Brands</a></li> -->
+                  </ul>
+                  <!-- <ul class="col-sm-4">
+                    <li><strong>Hardware</strong></li>
+                    <li><a href="#">All Brands</a></li>
+                    <li><a href="#">Featured Products</a></li>
+                    <li><a href="#">Featured Brands</a></li>
+                  </ul>
                   <ul class="col-sm-4">
                     <li><strong>Hardware</strong></li>
                     <li><a href="#">All Brands</a></li>
@@ -137,6 +154,12 @@
                     <li><a href="#">Featured Brands</a></li>
                     <li><a href="#">Featured Brands</a></li>
                     <li><a href="#">Featured Brands</a></li>
+                    <li><a href="#">Featured Brands</a></li>
+                  </ul>
+                  <ul class="col-sm-4">
+                    <li><strong>Hardware</strong></li>
+                    <li><a href="#">All Brands</a></li>
+                    <li><a href="#">Featured Products</a></li>
                     <li><a href="#">Featured Brands</a></li>
                   </ul>
                   <ul class="col-sm-4">
@@ -153,37 +176,16 @@
                     <li><a href="#">Featured Brands</a></li>
                     <li><a href="#">Featured Brands</a></li>
                     <li><a href="#">Featured Brands</a></li>
-                  </ul>
-                  <ul class="col-sm-4">
-                    <li><strong>Hardware</strong></li>
-                    <li><a href="#">All Brands</a></li>
-                    <li><a href="#">Featured Products</a></li>
-                    <li><a href="#">Featured Brands</a></li>
-                  </ul>
-                  <ul class="col-sm-4">
-                    <li><strong>Hardware</strong></li>
-                    <li><a href="#">All Brands</a></li>
-                    <li><a href="#">Featured Products</a></li>
-                    <li><a href="#">Featured Brands</a></li>
-                  </ul>
-                  <ul class="col-sm-4">
-                    <li><strong>Hardware</strong></li>
-                    <li><a href="#">All Brands</a></li>
-                    <li><a href="#">Featured Products</a></li>
-                    <li><a href="#">Featured Brands</a></li>
-                    <li><a href="#">Featured Brands</a></li>
-                    <li><a href="#">Featured Brands</a></li>
-                    <li><a href="#">Featured Brands</a></li>
-                  </ul>
+                  </ul> -->
             </div>
               <div class="col-md-4 col-sm-3 hidden-xs">
-                <div class="menu_image"><a title="" href="#"><img alt="menu_image" src="http://htmldemo.themesmart.net/flavours/version2/images/menu-bag.png"></a></div>
+                <div class="menu_image"><a title="" href="#"><img alt="menu_image" src="assets/image/smoke-logo_small.png"></a></div>
               </div>
             </div>            
           </li>
-          <li class="dropdown ">
+          <!-- <li class="dropdown ">
             <a href="#">
-              <span>Company</span>
+              <span>Hot & New</span>
               <span class="icon-dropdown"></span>
             </a>
             <div class="site-nav-dropdown">
@@ -250,10 +252,10 @@
               </div>
             </div>
           </li>
-          <li><a href="#">Product</a></li>
+          <li><a href="#">ELiquids</a></li>
           <li class="dropdown ">
             <a href="#">
-              <span>New Stuff</span>
+              <span>POD Systems</span>
               <span class="icon-dropdown"></span>
             </a>
             <div class="site-nav-dropdown">
@@ -306,10 +308,11 @@
             </div>
             </div>
           </li>
-          <li><a href="#">Hardware</a></li>
+          <li><a href="#">Dispensary Supply</a></li>
           <li class="dropdown ">
             <a href="#">
-              <span>Sample</span>
+              <span>Smoke Shop
+              </span>
               <span class="icon-dropdown"></span>
             </a>
             <div class="site-nav-dropdown">
@@ -361,7 +364,7 @@
                   </ul>
             </div>
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>

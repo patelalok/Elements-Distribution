@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from './product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductListComponent implements OnInit {
 
   productList : Product[] = [];
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
@@ -19,18 +18,28 @@ export class ProductComponent implements OnInit {
       // for example extract the id..
 
       let id = +params['id'];
-      if(params['type']== 'model'){
+      if(params['type'] == 'model'){
          // (+) converts string 'id' to a number
         //this.getProductByModelId(id);
       }
-      else if(params['type']== 'category'){
+      else if(params['type'] == 'category'){
         this.getProductByCategoryId(id);
+      }
+      else if(params['type'] == 'subCategory'){
+        this.getProductBySubCategoryId(id);
       }   
     });
   }
 
   getProductByCategoryId(categoryId: number) {
     this.productService.getProductByCategoryId(categoryId)
+    .subscribe((product: Product[])=>{
+      this.productList = product;
+      this.productList = this.productList.slice();
+    })
+  }
+  getProductBySubCategoryId(subCategoryId: number) {
+    this.productService.getProductBySuBCategoryId(subCategoryId)
     .subscribe((product: Product[])=>{
       this.productList = product;
       this.productList = this.productList.slice();

@@ -12,14 +12,16 @@ export class HeaderComponent implements OnInit {
   constructor(private sharedService: SharedService) { }
 
   ngOnInit() {
+    this.getMenu();
   }
 
-  // getMenu() {
-  //   this.sharedService.getMenu()
-  //   .subscribe((menu: MenuDto)=>{
-  //     this.menuDto = menu;
-  //   });
+  getMenu() {
+    this.sharedService.getMenu()
+    .subscribe((menu: MenuDto)=>{
+      this.menuDto = menu;
+      console.log('meunu', this.menuDto);
+    });
  
-  // }
+  }
 
 }

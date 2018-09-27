@@ -1,0 +1,64 @@
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <form [formGroup]="loginForm">
+            <ul>
+              <li>
+                <label>Username </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="email" class="form-control" formControlName="email">
+                <div *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched" class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="loginForm.get('email').hasError('pattern') && loginForm.get('email').touched" class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label>Password </label>
+                <em>*</em>
+              </li>
+              <li>
+                <input type="password" class="form-control" formControlName="password">
+                <div *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched" class="alert alert-danger">
+                  *Required!!
+                </div>
+                <div *ngIf="loginForm.get('password').hasError('pattern') && loginForm.get('password').touched" class="alert alert-danger">
+                  *Value Not Alloewd
+                </div>
+              </li>
+            </ul>
+  
+            <ul>
+              <li>
+                <input type="checkbox"> Remember me
+                <a href="#" class="forgot-password"> Forgot Password?</a>
+              </li>
+            </ul>
+  
+            <ul>
+              <li>
+                <button mat-button class="login-button" [disabled]="loginForm.invalid" (click)="this.login()">Login</button>
+              </li>
+            </ul>
+  
+            <ul>
+              <li style="text-align: center;">
+                <a href="javascript:;" routerLink = "/signup">Not a Member? Signup Now </a>
+              </li>
+            </ul>
+          </form>
+        </mat-card>
+  
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+  
