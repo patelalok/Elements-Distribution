@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment.prod';
-import { Product } from './product.component';
 import { Observable } from 'rxjs';
+import { Product, ProductVariant } from './product-list/product-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +44,8 @@ export class ProductService {
         error => {
           console.log(JSON.stringify(error.json()));
         });
+  }
+  getProductVariantDetailsByProductId(productId: number): Observable<ProductVariant[]> {
+    return this.http.get<ProductVariant[]>(this.url+'/getProductVariantById?productId='+productId);
   }
 }

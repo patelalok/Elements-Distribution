@@ -54,6 +54,9 @@ public class ProductVariantDao {
     @Transient
     private int minQuantity;
 
+    @Transient
+    private ProductDao productDao;
+
     public int getProductVariantId() {
         return productVariantId;
     }
@@ -228,5 +231,13 @@ public class ProductVariantDao {
 
     public void setOldProductNo(String oldProductNo) {
         this.oldProductNo = oldProductNo;
+    }
+
+    public ProductDao getProductDao() {
+        return productDao;
+    }
+
+    public void setProductDao(ProductDao productDao) {
+        this.productDao = productDao;
     }
 }

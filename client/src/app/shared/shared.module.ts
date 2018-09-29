@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SharedService } from './shared.service';
 import { Router, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {MatButtonModule, MatCheckboxModule, MatCardModule} from '@angular/material';
+
 
 @NgModule({
   imports: [
@@ -12,14 +14,20 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    MatButtonModule,
-    MatCheckboxModule,
     MatCardModule,
+    MatCheckboxModule,
+    MatButtonModule
     
   ],
   declarations: [HeaderComponent, FooterComponent],
-  exports:[HeaderComponent, FooterComponent,RouterModule, ReactiveFormsModule,
-    FormsModule,],
+  exports:[HeaderComponent, 
+    FooterComponent,
+    RouterModule, 
+    ReactiveFormsModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    FormsModule],
   providers: [SharedService]
 })
 export class SharedModule { }

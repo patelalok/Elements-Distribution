@@ -1,0 +1,17 @@
+.signup-button {
+	border-radius: 30px;
+	width: 100%;
+	background: red;
+}
+li {
+	margin: 10px;
+}
+hr {
+	border-top: 2px solid rgba(0,0,0,.1);
+}
+h3 {
+	color: red;
+}
+em {
+    color: red;
+}

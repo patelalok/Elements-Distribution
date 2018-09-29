@@ -38,8 +38,8 @@
       </div>
       <ul class="customer-links">
         <li>
-          <a href="#"><b>Login</b></a><span class="or">|</span>
-          <a href="#"><span style="color: red;"><b>Create Account</b></span></a>
+          <a routerLink = "/login"><b>Login</b></a><span class="or">|</span>
+          <a routerLink = "/signup"><span style="color: red;"><b>Create Account</b></span></a>
           <span class="or">|</span>
           <a href="#"><span style="color: blue;"><b>Retail Store</b></span></a>
         </li>
@@ -132,7 +132,7 @@
               <div class="col-md-8 col-sm-9">
                   <ul class="col-xs-6" *ngFor="let subCategory of category.subCategoryDaoList">
                     <li >
-                      <a routerLink = "product/subCategory/51"><strong>{{subCategory.name}}</strong></a>
+                      <a routerLink = "product/subCategory/{{subCategory.id}}"><strong>{{subCategory.name}}</strong></a>
                     </li>
                     <!-- <li><a href="#">All Brands</a></li>
                     <li><a href="#">Featured Products</a></li>

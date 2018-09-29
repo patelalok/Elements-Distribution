@@ -13,7 +13,7 @@ public interface BrandRepository extends JpaRepository<BrandDao, Integer> {
 
     List<BrandDao> findAll();
 
-    @Query(value = "SELECT * FROM brand b ORDER BY b.name", nativeQuery = true)
-    List<Object[]> getAllBrands();
+    @Query(value = "SELECT * FROM brand b where b.description = ?1 ORDER BY b.name", nativeQuery = true)
+    List<Object[]> getAllBrands(String description);
 
 }

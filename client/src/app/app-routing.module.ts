@@ -5,17 +5,19 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { LoginComponent } from './customer/login/login.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { SignupComponent } from './customer/signup/signup.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'product/:type/:id', component: ProductListComponent},
   // { path: 'product', component: ProductComponent},
-  // { path: 'product-details/:id', component: ProductDetailsComponent},
+  { path: 'product-details/:id', component: ProductDetailsComponent},
   // { path: 'product-details', component: ProductDetailsComponent},
 
   { path: 'login', component: LoginComponent},
-  // { path: 'signup', component: SignupComponent},
+  { path: 'signup', component: SignupComponent},
 
 
   // { path: 'viewCart', component: CartComponent},

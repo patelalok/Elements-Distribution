@@ -164,6 +164,9 @@ public class ProductManager {
 
         productVariantDaoList = productVariantRepository.findAllByProductIdAndActive(productId, true);
 
+        List<Object[]> result = productRepository.getProductByProductId(productId);
+
+
         for (ProductVariantDao productVariantDao : productVariantDaoList) {
             int totalQuantity = 0;
 

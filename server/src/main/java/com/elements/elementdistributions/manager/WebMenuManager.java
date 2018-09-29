@@ -5,7 +5,6 @@ import com.elements.elementdistributions.dto.MenuDto;
 import com.elements.elementdistributions.dto.WebBrandDto;
 import com.elements.elementdistributions.entity.BrandDao;
 import com.elements.elementdistributions.entity.CategoryDao;
-import com.elements.elementdistributions.entity.ModelDao;
 import com.elements.elementdistributions.entity.SubCategoryDao;
 import com.elements.elementdistributions.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,6 @@ public class WebMenuManager {
 
         List<CategoryDao> categoryDtoList;
         List<BrandDao> brandDtoList;
-        List<ModelDao> modelDtoList;
         List<SubCategoryDao> subCategoryDaoList;
 
         List<WebBrandDto> webBrandDtoList = new ArrayList<WebBrandDto>();
@@ -43,7 +41,7 @@ public class WebMenuManager {
         List<Object[]> categoriesResult = categoryRepository.getAllCategories();
         categoryDtoList = setCategoryDetail(categoriesResult);
 
-        List<Object[]> result = brandRepository.getAllBrands();
+        List<Object[]> result = brandRepository.getAllBrands("E-LIQUIDS");
         brandDtoList =  setBrandDetails(result);
 
         for(int i = 0; i<brandDtoList.size(); i++)
@@ -53,9 +51,6 @@ public class WebMenuManager {
             webBrandDto.setBrandName(brandDtoList.get(i).getName());
             webBrandDto.setBrandImage(brandDtoList.get(i).getBrandImage());
 
-            //Calling method to get all models details for particular brand id.
-            modelDtoList = getModelListForBrand(brandDtoList.get(i).getBrandId());
-            webBrandDto.setModelDtoList(modelDtoList);
             webBrandDtoList.add(webBrandDto);
             webBrandDtoList.set(i, webBrandDto);
         }
@@ -66,8 +61,6 @@ public class WebMenuManager {
             subCategoryDaoList = getAllSubCategoryForCategory(categoryDtoList.get(i).getCategoryId());
             categoryDtoList.get(i).setSubCategoryDaoList(subCategoryDaoList);
         }
-
-
 
         menuDto.setCategoryDtoList(categoryDtoList);
 
@@ -128,26 +121,4 @@ public class WebMenuManager {
         return brandDaoList;
     }
 
-    private List<ModelDao> getModelListForBrand(int brandId) {
-
-        List<ModelDao> modelDtoListGlobal = new ArrayList<ModelDao>();
-        List<Integer> modelNos;
-        modelNos =  productRepository.getModelDetailsForBrand(brandId);
-        for(int i = 0;i<modelNos.size(); i++)
-        {
-            ModelDao modelDao = new ModelDao();
-            List<ModelDao> modelDtoList;
-            modelDtoList = modelRepository.findAllByModelId(modelNos.get(i));
-
-            if(modelDtoList.size() != 0)
-            {
-                modelDao.setModelId(modelDtoList.get(0).getModelId());
-                modelDao.setName(modelDtoList.get(0).getName());
-
-                modelDtoListGlobal.add(modelDao);
-                modelDtoListGlobal.set(i,modelDao);
-            }
-        }
-        return modelDtoListGlobal;
-    }
 }

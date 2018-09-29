@@ -70,7 +70,7 @@
     text-align: center;
     position: relative;
     margin: -1px -1px 0 !important;
-    background-color: #f4f6f7;
+    /* background-color: #f4f6f7; */
 }
 .product .product-labels {
     position: absolute;
@@ -191,6 +191,11 @@
 }
 .products .product-inner:hover .product-image-inner picture:last-child{
    left: 0;
+}
+
+.product-padding {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 @media (max-width: 767px)
 {

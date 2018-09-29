@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
 // import { Observer } from 'rxjs';
 // import 'rxjs/Rx';
 import { environment } from '../../environments/environment.prod';
-import { Product } from '../product/product.component';
 import { Observable, throwError } from 'rxjs';
 import {map, catchError} from 'rxjs/operators'
 
@@ -16,6 +15,7 @@ import {map, catchError} from 'rxjs/operators'
 export class SharedService {
   private url: string;
   menuDto: MenuDto;
+  private customerDetails: any;
 
   constructor(private http: HttpClient) {
     this.url = environment.productUrl;
@@ -23,6 +23,16 @@ export class SharedService {
 
   getMenu(): Observable<any> {
     return this.http.get(this.url + '/getWebMenu');
+  }
+
+  setCustomerDetailsForSale(obj: any): void {
+    this.customerDetails = obj;
+    localStorage.setItem('customerDetails', JSON.stringify(obj));
+  }
+
+  getCustomerDetailsForSale(): any {
+    this.customerDetails = JSON.parse(localStorage.getItem('customerDetails'));
+    return this.customerDetails;
   }
 
   // private extractData(res: Response): Product[] {

@@ -26,7 +26,8 @@ import { CustomerModule } from './customer/customer.module';
     ProductModule,
     CheckoutModule,
     AdminModule,
-    CustomerModule
+    CustomerModule,
+    BrowserAnimationsModule
   ],
   exports: [SharedModule],
   providers: [],

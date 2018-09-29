@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { Product } from '../product/product.component';
 import { AdminService } from './admin.service';
 import { ProductService } from '../product/product.service';
+import { Product } from '../product/product-list/product-list.component';
 
 @Component({
   selector: 'app-admin',

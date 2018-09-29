@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
 
@@ -50,6 +51,7 @@ export class ProductListComponent implements OnInit {
 }
 
 export class Product {
+  productId: number;
   transactionLineItemId: number;
   productNo: string;
   description: string;
@@ -73,4 +75,58 @@ export class Product {
   featured: boolean;
   onSale: boolean;
   newProduct: boolean;
+}
+
+export class ProductVariant {
+  productVariantId?: number;
+  productId: number;
+  productNo: string;
+  oldProductNo?: string;
+  cost?: number;
+  retail?: number;
+  tier1?: number;
+  tier2?: number;
+  tier3?: number;
+  quantity?: number;
+  variant1: string;
+  value1: string;
+  variant2?: string;
+  value2?: string;
+  variant3?: string;
+  value3?: string;
+  image: any;
+  createdTimestamp: any;
+  operationType?: string;
+
+
+  // productVariantNo: number;
+  description?: string;
+  categoryId?: number;
+  subCategoryId?: number;
+  brandId?: number
+  vendorId?: number;
+  modelId?: number;
+  alternetNo?: string;
+
+  markup?: number;
+  minQuantity?: number;
+  tax?: boolean;
+  variant?: boolean;
+  active?: boolean;
+  ecommerce?: boolean;
+  relatedProduct?: boolean;
+  // defaultQuantity = 1;
+  saleQuantity?: number;
+  returnRule?: any;
+
+  transactionComId?: number;
+  date?: any;
+  time?: any;
+  status?: string;
+  discount?: number;
+  retailWithDiscount?: number;
+  totalProductPrice?: number;
+  taxAmountOnProduct?: number;
+  imeiNo?: any;
+  //productInventoryDaoList?: ProductInventory[];
 }

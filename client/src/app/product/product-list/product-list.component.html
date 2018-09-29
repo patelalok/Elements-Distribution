@@ -77,8 +77,8 @@
         </div>
         <div class="col-md-9 col-sm-12 col-xs-12 pull-right">
             <div class="row products">
-              <div *ngFor="let product of this.productList" class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
+              <div *ngFor="let product of this.productList" class="col-xs-6 col-sm-6 col-md-3 product text-center product-padding">
+                <div class="product-inner centered-box" routerLink="/product-details/{{product.productId}}"> 
                   <a href="#" class="product-image">
                     <div class="product-labels">
                       <span *ngIf="product.newProduct" class="new-label title-h6">New</span>
@@ -90,7 +90,7 @@
                         <img *ngIf="(product.image==null)" src="/assets/image/noImage.png" class="attachment-thegem_shop_catalog" alt=""> 
                       </picture> 
                       <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
+                       <img src="assets/image/smoke-logo_small.png" class="attachment-$size woo-product-hover" alt=""> 
                       </picture> 
                     </span> 
                   </a>
@@ -109,359 +109,39 @@
                         </span>
                       </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
+                    <!-- <input type="text" class="form-control" placeholder="Enter">
+                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart"> -->
                   </div>
                 </div>
               </div>
-              <!-- <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <div class="product-labels">
-                      <span class="new-label title-h6">New</span>
-                      <span class="out-of-stock-label title-h6">Out <span class="small">of stock</span></span>
-                    </div> 
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <div class="product-labels"> <span class="onsale title-h6">Sale!</span></div>
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-3 product text-center">
-                <div class="product-inner centered-box"> 
-                  <a href="#" class="product-image">
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img src="assets/image/Bags7-thegem_shop_catalog.jpg" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/Bags6-thegem_shop_catalog.jpg" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">Black Tempered Glass Backing (Natural Bl...</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>176.99
-                        </span>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart">
-                  </div>
-                </div>
-              </div> -->
             </div>
           </div>
       </div>
     </main>
     </div>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

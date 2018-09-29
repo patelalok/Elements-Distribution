@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CustomerService } from './customer.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   declarations: [LoginComponent, SignupComponent],
   providers: [CustomerService]
