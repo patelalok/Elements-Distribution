@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
+import { SharedService, Category, WebBrandDto } from '../../shared/shared.service';
 
 @Component({
   selector: 'app-product',
@@ -10,9 +11,16 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
 
   productList : Product[] = [];
-  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
+  categoryList: Category[] = [];
+  brandList: WebBrandDto[] = [];
+  constructor(private productService: ProductService, 
+    private router: Router, 
+    private route: ActivatedRoute,
+    private sharedService: SharedService) { }
 
   ngOnInit() {
+
+    this.getMenuDetails();
     this.route.params.subscribe(params => {
       // PARAMS CHANGED .. TO SOMETHING REALLY COOL HERE ..
  
@@ -45,6 +53,34 @@ export class ProductListComponent implements OnInit {
       this.productList = product;
       this.productList = this.productList.slice();
     })
+  }
+
+  getMenuDetails() {
+
+    // this.loadingService.loading = true;
+
+
+    this.sharedService.getMenu()
+    .subscribe((data)=>{
+
+      for(var i =0;i<data.categoryDtoList.length;i++){
+        // var str = data.categoryDtoList[i].name;
+        //console.log('str', str);
+
+        this.categoryList.push(data.categoryDtoList[i]);
+      }
+      for(var i = 0; i<data.webBrandDtoList.length; i++) {
+        var str = data.webBrandDtoList[i].name;
+                  // console.log('brand response', data.webBrandDtoList);
+
+        this.brandList.push(data.webBrandDtoList[i]);
+      }
+      this.brandList = this.brandList.slice();
+      console.log('BrandsList', this.brandList);
+      this.categoryList = this.categoryList.slice();
+      // this.loadingService.loading = false;
+
+});
   }
 
 

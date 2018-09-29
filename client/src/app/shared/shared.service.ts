@@ -61,8 +61,8 @@ export class Category {
   categoryId: number;
   subCategoryDaoList: SubCategory[];
 }
-export class Brand {
-  name: string;
+export class WebBrandDto {
+  brandName: string;
   brandId: number;
 }
 export class SubCategory {
@@ -80,6 +80,6 @@ export class SubCategory {
 
 export class MenuDto {
   categoryDtoList: Category[];
-  webBrandDtoList: Brand[];
+  webBrandDtoList: WebBrandDto[];
   // modelDtoList: Model[];
 }
