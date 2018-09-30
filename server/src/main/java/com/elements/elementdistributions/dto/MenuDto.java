@@ -1,7 +1,7 @@
 package com.elements.elementdistributions.dto;
 
+import com.elements.elementdistributions.entity.BrandDao;
 import com.elements.elementdistributions.entity.CategoryDao;
-import com.elements.elementdistributions.entity.ModelDao;
 
 import java.util.List;
 
@@ -11,8 +11,9 @@ import java.util.List;
 public class MenuDto {
 
     private List<CategoryDao> categoryDtoList;
-    private List<WebBrandDto> webBrandDtoList;
-    private List<ModelDao> modelDtoList;
+    private List<BrandDao> webBrandDtoList;
+    private List<BrandDao> eLiquidBrandList;
+//    private List<ModelDao> modelDtoList;
 
     public List<CategoryDao> getCategoryDtoList() {
         return categoryDtoList;
@@ -22,19 +23,43 @@ public class MenuDto {
         this.categoryDtoList = categoryDtoList;
     }
 
-    public List<WebBrandDto> getWebBrandDtoList() {
+    public List<BrandDao> getWebBrandDtoList() {
         return webBrandDtoList;
     }
 
-    public void setWebBrandDtoList(List<WebBrandDto> webBrandDtoList) {
+    public void setWebBrandDtoList(List<BrandDao> webBrandDtoList) {
         this.webBrandDtoList = webBrandDtoList;
     }
 
-    public List<ModelDao> getModelDtoList() {
-        return modelDtoList;
+    //    public List<WebBrandDto> getWebBrandDtoList() {
+//        return webBrandDtoList;
+//    }
+//
+//    public void setWebBrandDtoList(List<WebBrandDto> webBrandDtoList) {
+//        this.webBrandDtoList = webBrandDtoList;
+//    }
+
+    public List<BrandDao> geteLiquidBrandList() {
+        return eLiquidBrandList;
     }
 
-    public void setModelDtoList(List<ModelDao> modelDtoList) {
-        this.modelDtoList = modelDtoList;
+    public void seteLiquidBrandList(List<BrandDao> eLiquidBrandList) {
+        this.eLiquidBrandList = eLiquidBrandList;
     }
+
+    //    public List<WebBrandDto> geteLiquidBrandList() {
+//        return eLiquidBrandList;
+//    }
+//
+//    public void seteLiquidBrandList(List<WebBrandDto> eLiquidBrandList) {
+//        this.eLiquidBrandList = eLiquidBrandList;
+//    }
+
+    //    public List<ModelDao> getModelDtoList() {
+//        return modelDtoList;
+//    }
+//
+//    public void setModelDtoList(List<ModelDao> modelDtoList) {
+//        this.modelDtoList = modelDtoList;
+//    }
 }

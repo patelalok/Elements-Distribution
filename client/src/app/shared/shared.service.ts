@@ -65,6 +65,10 @@ export class WebBrandDto {
   brandName: string;
   brandId: number;
 }
+export class BrandDao {
+  name: string;
+  brandId: number;
+}
 export class SubCategory {
   id: number;
   categoryId: number;
@@ -80,6 +84,7 @@ export class SubCategory {
 
 export class MenuDto {
   categoryDtoList: Category[];
-  webBrandDtoList: WebBrandDto[];
+  webBrandDtoList: BrandDao[];
+  eLiquidBrandList: BrandDao[];
   // modelDtoList: Model[];
 }

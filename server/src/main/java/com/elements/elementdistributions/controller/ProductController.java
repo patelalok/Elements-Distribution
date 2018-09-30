@@ -45,6 +45,11 @@ public class ProductController {
     public List<ProductEcomerceDto> getProductsBySubCategory(@RequestParam int subCategoryId) throws SQLException {
         return productManager.getProductsBySubCategory(subCategoryId);
     }
+    @RequestMapping(value = "/getProductsByBrand", method = RequestMethod.GET)
+    public List<ProductEcomerceDto> getProductsByBrand(@RequestParam int brandId) throws SQLException {
+
+        return productManager.getProductsByBrand(brandId);
+    }
     @RequestMapping(value = "/getProductVariantById", method = RequestMethod.GET, produces = "application/json")
     public List<ProductVariantDao> getProductVariantById(@RequestParam Integer productId)
     {

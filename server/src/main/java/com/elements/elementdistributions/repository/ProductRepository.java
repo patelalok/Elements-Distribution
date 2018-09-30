@@ -199,7 +199,7 @@ public interface ProductRepository extends JpaRepository<ProductDao, String> {
             "on i.product_no = p.product_no\n" +
             "WHERE active = 1 \n" +
             "AND ecommerce = 1 \n" +
-            "AND p.model_id = ?1\n" +
+            "AND p.brand_id = ?1\n" +
             "group by p.product_no,\n" +
             "p.description,\n" +
             "p.category_id,\n" +
@@ -213,7 +213,7 @@ public interface ProductRepository extends JpaRepository<ProductDao, String> {
             "p.new_product," +
             "p.on_sale," +
             "p.featured", nativeQuery = true)
-    List<Object[]> getEcommerceProductsByBrand(int modelId);
+    List<Object[]> getEcommerceProductsByBrand(int brandId);
 
     @Query(value = "SELECT p.product_id,\n" +
             "p.product_no,\n" +

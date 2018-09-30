@@ -2,7 +2,6 @@ package com.elements.elementdistributions.manager;
 
 
 import com.elements.elementdistributions.dto.MenuDto;
-import com.elements.elementdistributions.dto.WebBrandDto;
 import com.elements.elementdistributions.entity.BrandDao;
 import com.elements.elementdistributions.entity.CategoryDao;
 import com.elements.elementdistributions.entity.SubCategoryDao;
@@ -34,9 +33,11 @@ public class WebMenuManager {
 
         List<CategoryDao> categoryDtoList;
         List<BrandDao> brandDtoList;
+        List<BrandDao> eLiquidBrandList;
+
         List<SubCategoryDao> subCategoryDaoList;
 
-        List<WebBrandDto> webBrandDtoList = new ArrayList<WebBrandDto>();
+        List<BrandDao> webBrandDtoList = new ArrayList<BrandDao>();
 
         List<Object[]> categoriesResult = categoryRepository.getAllCategories();
         categoryDtoList = setCategoryDetail(categoriesResult);
@@ -44,11 +45,16 @@ public class WebMenuManager {
         List<Object[]> result = brandRepository.getAllBrands("E-LIQUIDS");
         brandDtoList =  setBrandDetails(result);
 
+        List<Object[]> eLiquidBrands = brandRepository.getAllBrands("E-LIQUIDS");
+        eLiquidBrandList = setBrandDetails(eLiquidBrands);
+
+        menuDto.seteLiquidBrandList(eLiquidBrandList);
+
         for(int i = 0; i<brandDtoList.size(); i++)
         {
-            WebBrandDto webBrandDto = new WebBrandDto();
+            BrandDao webBrandDto = new BrandDao();
             webBrandDto.setBrandId(brandDtoList.get(i).getBrandId());
-            webBrandDto.setBrandName(brandDtoList.get(i).getName());
+            webBrandDto.setName(brandDtoList.get(i).getName());
             webBrandDto.setBrandImage(brandDtoList.get(i).getBrandImage());
 
             webBrandDtoList.add(webBrandDto);

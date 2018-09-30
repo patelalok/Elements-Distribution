@@ -4,12 +4,40 @@
   </div>
 </nav>
 <div class="wrapper-container">
+    Copy
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
   <div class="bg-white">
-    <a href="#"><div class="topheader"></div></a>
+    <a href="#">
+      <div class="topheader"></div>
+    </a>
   </div>
   <header class="main-header" role="banner">
     <div class="header-bottom">
-      <div class="container">  
+      <div class="container">
         <div class="header-mobile">
           <div class="menu-block visible-phone">
             <div id="showLeftPush"></div>
@@ -26,122 +54,153 @@
         </div>
         <div class="customer-account-nav">
           <a href="#">Home</a> |
-          <a href="#">Login</a> |     
-          <a href="#">Sign Up</a> | 
+          <a href="#">Login</a> |
+          <a href="#">Sign Up</a> |
           <a href="#">Retail Store</a>
         </div>
-      
-      <div class="header-logo col-xs-12 col-sm-4">
-        <a href="#">
-          <img src="assets/image/smoke-logo_small.png" width="200px" alt="">
-        </a>
-      </div>
-      <ul class="customer-links">
-        <li>
-          <a routerLink = "/login"><b>Login</b></a><span class="or">|</span>
-          <a routerLink = "/signup"><span style="color: red;"><b>Create Account</b></span></a>
-          <span class="or">|</span>
-          <a href="#"><span style="color: blue;"><b>Retail Store</b></span></a>
-        </li>
-        <li>&nbsp;|&nbsp;<a href="#"><b>GCC Forms</b></a></li>
-        <li>&nbsp;|&nbsp;<a href="#"><b>FAQ / HELP</b></a></li>
-      </ul>
 
-      <div class="top-header">
-        <div class="wrapper-top-cart">
-          <p class="top-cart">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            <a href="#" id="cartToggle">
-              <span class="first">Cart</span>
-              <span id="cartCount">0</span>
-            </a>
-          </p>
-          <div id="dropdown-cart" style="display: none;">
-            <div class="bag-product clearfix">
-              <figure class="pull-left">
-                <a class="bag-product-img" href="#">
-                  <img width="120" height="150" src="assets/image/shirt.jpg">
-                </a>
-              </figure>
-              <div class="bag-product-details">
-                <div class="bag-product-title">
-                  <a href="#">Cloyd Shirt</a>
+        <div class="header-logo col-xs-12 col-sm-4">
+          <a href="#">
+            <img src="assets/image/smoke-logo_small.png" width="200px" alt="">
+          </a>
+        </div>
+        <ul class="customer-links">
+          <li>
+            <a routerLink="/login"><b>Login</b></a><span class="or">|</span>
+            <a routerLink="/signup"><span style="color: red;"><b>Create Account</b></span></a>
+            <span class="or">|</span>
+            <a href="#"><span style="color: blue;"><b>Retail Store</b></span></a>
+          </li>
+          <li>&nbsp;|&nbsp;<a href="#"><b>GCC Forms</b></a></li>
+          <li>&nbsp;|&nbsp;<a href="#"><b>FAQ / HELP</b></a></li>
+        </ul>
+
+        <div class="top-header">
+          <div class="wrapper-top-cart">
+            <p class="top-cart">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <a href="#" id="cartToggle">
+                <span class="first">Cart</span>
+                <span id="cartCount">0</span>
+              </a>
+            </p>
+            <div id="dropdown-cart" style="display: none;">
+              <div class="bag-product clearfix">
+                <figure class="pull-left">
+                  <a class="bag-product-img" href="#">
+                    <img width="120" height="150" src="assets/image/shirt.jpg">
+                  </a>
+                </figure>
+                <div class="bag-product-details">
+                  <div class="bag-product-title">
+                    <a href="#">Cloyd Shirt</a>
+                  </div>
+                  <div class="bag-product-price">Unit Price:
+                    <span class="amount">£200</span>
+                  </div>
+                  <div class="bag-product-quantity">Quantity: 1</div>
                 </div>
-                <div class="bag-product-price">Unit Price: 
-                  <span class="amount">£200</span>
+                <a href="#" class="remove-product fa fa-times"></a>
+              </div>
+              <div class="has-items">
+                <ol class="mini-products-list">
+                </ol>
+                <div class="summary">
+                  <p class="total">
+                    <span class="label" style="color:#000">Total:</span>
+                    <span class="price">$0.00</span>
+                  </p>
                 </div>
-                <div class="bag-product-quantity">Quantity: 1</div>
-              </div>
-              <a href="#" class="remove-product fa fa-times"></a> 
-            </div>
-            <div class="has-items">
-              <ol class="mini-products-list">
-              </ol>
-              <div class="summary">
-                <p class="total">
-                  <span class="label" style="color:#000">Total:</span>
-                  <span class="price">$0.00</span>
-                </p>
-              </div>
-              <div class="actions">
-                <button class="btn btn2">Go to Cart</button>
+                <div class="actions">
+                  <button class="btn btn2">Go to Cart</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- End Top Header -->
-      <div class="header-panel-top">
-        <div class="nav-search">                            
-          <a class="icon-search" href="#">Search Bar</a>
-          <form action="#" method="get" class="input-group search-bar" role="search">
-            <input style="min-width: 275px;" type="text" name="q" value="" placeholder="Search Bar" class="input-group-field">
-            <span class="input-group-btn">
-              <input type="submit" class="btn fa fa-search" value="Search">
-            </span>
-          </form>
-        </div>
-        <div class="currency"></div>
-      </div>
-      <div class="header-panel">
-        <div class="row">
-          <div class="header-panel-bottom col-xs-8">
-          </div>
-          <div class="nav-search on">                                
-            <a class="icon-search" href="#">Search Brands, Flavors, Categories</a>
+        <!-- End Top Header -->
+        <div class="header-panel-top">
+          <div class="nav-search">
+            <a class="icon-search" href="#">Search Bar</a>
             <form action="#" method="get" class="input-group search-bar" role="search">
-              <input style="min-width: 275px;" type="text" name="q" value="" placeholder="Search 1,800 Brands, Flavors, Hardware" class="input-group-field" aria-label="Search Site" autocomplete="off">
+              <input style="min-width: 275px;" type="text" name="q" value="" placeholder="Search Bar" class="input-group-field">
               <span class="input-group-btn">
-                <input type="submit" class="btn" value="Search">
+                <input type="submit" class="btn fa fa-search" value="Search">
               </span>
             </form>
           </div>
+          <div class="currency"></div>
+        </div>
+        <div class="header-panel">
+          <div class="row">
+            <div class="header-panel-bottom col-xs-8">
+            </div>
+            <div class="nav-search on">
+              <a class="icon-search" href="#">Search Brands, Flavors, Categories</a>
+              <form action="#" method="get" class="input-group search-bar" role="search">
+                <input style="min-width: 275px;" type="text" name="q" value="" placeholder="Search 1,800 Brands, Flavors, Hardware"
+                  class="input-group-field" aria-label="Search Site" autocomplete="off">
+                <span class="input-group-btn">
+                  <input type="submit" class="btn" value="Search">
+                </span>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
     </div>
-    <nav class="nav-bar" role="navigation">                    
+    <nav class="nav-bar" role="navigation">
       <div class="container">
         <ul class="site-nav" *ngIf="this.menuDto">
-          <li class="dropdown" *ngFor= "let category of this.menuDto.categoryDtoList">
+          <li class="dropdown">
+            <a href="#">
+              <span>E-LIQUIDS</span>
+              <span class="icon-dropdown"></span>
+            </a>
+            <div class="site-nav-dropdown">
+              <div class="col-md-8 col-sm-9">
+                <ul class="col-xs-6" *ngFor="let eLiquidBrand of this.menuDto.eLiquidBrandList">
+                  <li>
+                    <a routerLink="product/brand/{{eLiquidBrand.brandId}}"><strong>{{eLiquidBrand.name}}</strong></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4 col-sm-3 hidden-xs">
+                <div class="menu_image"><a title="" href="#"><img alt="menu_image" src="assets/image/smoke-logo_small.png"></a></div>
+              </div>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">
+              <span>Pod System</span>
+              <!-- <span class="icon-dropdown"></span> -->
+            </a>
+          </li>
+          <li class="dropdown">
+              <a href="#">
+                <span>Starter Kit</span>
+                <!-- <span class="icon-dropdown"></span> -->
+              </a>
+            </li>
+          <li class="dropdown" *ngFor="let category of this.menuDto.categoryDtoList">
             <a href="#">
               <span>{{category.name}}</span>
               <span class="icon-dropdown"></span>
             </a>
             <div class="site-nav-dropdown">
               <div class="col-md-8 col-sm-9">
-                  <ul class="col-xs-6" *ngFor="let subCategory of category.subCategoryDaoList">
-                    <li >
-                      <a routerLink = "product/subCategory/{{subCategory.id}}"><strong>{{subCategory.name}}</strong></a>
-                    </li>
-                    <!-- <li><a href="#">All Brands</a></li>
+                <ul class="col-xs-6" *ngFor="let subCategory of category.subCategoryDaoList">
+                  <li>
+                    <a routerLink="product/subCategory/{{subCategory.id}}"><strong>{{subCategory.name}}</strong></a>
+                  </li>
+                  <!-- <li><a href="#">All Brands</a></li>
                     <li><a href="#">Featured Products</a></li>
                     <li><a href="#">Featured Brands</a></li>
                     <li><a href="#">Featured Brands</a></li>
                     <li><a href="#">Featured Brands</a></li>
                     <li><a href="#">Featured Brands</a></li> -->
-                  </ul>
-                  <!-- <ul class="col-sm-4">
+                </ul>
+                <!-- <ul class="col-sm-4">
                     <li><strong>Hardware</strong></li>
                     <li><a href="#">All Brands</a></li>
                     <li><a href="#">Featured Products</a></li>
@@ -177,11 +236,11 @@
                     <li><a href="#">Featured Brands</a></li>
                     <li><a href="#">Featured Brands</a></li>
                   </ul> -->
-            </div>
+              </div>
               <div class="col-md-4 col-sm-3 hidden-xs">
                 <div class="menu_image"><a title="" href="#"><img alt="menu_image" src="assets/image/smoke-logo_small.png"></a></div>
               </div>
-            </div>            
+            </div>
           </li>
           <!-- <li class="dropdown ">
             <a href="#">

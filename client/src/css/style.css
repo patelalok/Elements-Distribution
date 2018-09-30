@@ -304,7 +304,7 @@ font-variant: normal !important;border: 2px rgba(10, 133, 216, 0.57) solid !impo
 .site-nav a{display:block;padding:12px;text-decoration:none}
 .site-nav > li{position: static;display:inline-block;list-style:none;}
 .site-nav > li > a{text-transform:uppercase;margin:16px 18px 12px;padding:0;letter-spacing:.05em}
-.site-nav > li > a >span{font-size: 16px;}
+.site-nav > li > a >span{font-size: 15px;}
 
 .site-nav > li:first-child > a{margin-left:0}
 .site-nav > li:hover > a > span:first-child,.site-nav > li:hover > a.current > span:first-child,.site-nav > li > a.current > span:first-child{border-bottom:2px solid #fff}

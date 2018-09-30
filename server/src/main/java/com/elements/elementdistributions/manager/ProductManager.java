@@ -193,4 +193,10 @@ public class ProductManager {
 
         return newProductVariantDaoList;
     }
+
+    public List<ProductEcomerceDto> getProductsByBrand(int brandId) {
+
+        List<Object[]> result = productRepository.getEcommerceProductsByBrand(brandId);
+        return setEcomerceDto(result);
+    }
 }

@@ -36,7 +36,11 @@ export class ProductListComponent implements OnInit {
       }
       else if(params['type'] == 'subCategory'){
         this.getProductBySubCategoryId(id);
-      }   
+      }
+      else if(params['type'] == 'brand'){
+        this.getProductByBrandId(id);
+      }
+
     });
   }
 
@@ -49,6 +53,13 @@ export class ProductListComponent implements OnInit {
   }
   getProductBySubCategoryId(subCategoryId: number) {
     this.productService.getProductBySuBCategoryId(subCategoryId)
+    .subscribe((product: Product[])=>{
+      this.productList = product;
+      this.productList = this.productList.slice();
+    })
+  }
+  getProductByBrandId(brandId: number) {
+    this.productService.getProductByBrandId(brandId)
     .subscribe((product: Product[])=>{
       this.productList = product;
       this.productList = this.productList.slice();
