@@ -1,146 +1,222 @@
 <div class="bg-white">
-    <main class="main-content container" role="main">
-      <div class="row mt-50 mb-50">
-        <div class="col-md-3 col-sm-12 col-xs-12">
-            <div class="categories_slidebar">
-                <h4 class="widget-title">Shop By Brands</h4>
-                <div class="accordion">
-                  <div class="card" *ngFor="let brand of this.brandList">
-                    <div class="card-header" id="products-tab">
-                      <a data-toggle="collapse" data-parent="#products-tab" href="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseOne" class="">
-                        {{brand.brandName}}
-                        <i class="fa fa-angle-up"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <h4 class="widget-title">Shop By Categories</h4>
-                <div class="accordion">
-                    <div class="card" *ngFor="let category of this.categoryList; let index = index">
-                      <div class="card-header" id="products-tab-cat">
-                        <a data-toggle="collapse" data-parent="#products-tab-cat" href="#collapseOne-{{index}}-cat" aria-expanded="true"
-                          aria-controls="collapseOne" class="">
-                          {{category.name}}
-                          <i class="fa fa-angle-up"></i>
-                        </a>
-                      </div>
-        
-                      <div *ngFor="let subCategory of category.subCategoryDaoList;" id="collapseOne-{{index}}-cat" class="collapse in" role="tabpanel"
-                        aria-labelledby="bags">
-                        <ul class="card-body">
-                          <li>
-                            <a href="#">{{subCategory.name}}</a>
-                          </li>
-                        </ul>
-                      </div>
-        
-                    </div>
-                  </div>
-              </div>
-          <!-- <div class="categories_slidebar">
-            <h4 class="widget-title">Categories</h4>
-            <div class="accordion" id="products-tab" role="tablist" aria-multiselectable="true">
-              <div class="card">            
-                <div class="card-header" role="tab" id="bags">
-                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="">
-                        Bags <i class="fa fa-angle-up"></i></a>
-                </div>
-                <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="bags">
-                    <ul class="card-body">
-                      <li><a href="#">Bags-1</a></li>
-                      <li><a href="#">Bags-2</a></li>
-                      <li><a href="#">Bags-3</a></li>
-                    </ul>
-                </div>
-              </div>
-              <div class="card">            
-                <div class="card-header" role="tab" id="sunglass">
-                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Sunglass <i class="fa fa-angle-up"></i></a>
-                </div>
-                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="sunglass" data-parent="#accordionEx">
-                    <ul class="card-body">
-                      <li><a href="#">Sunglass-1</a></li>
-                      <li><a href="#">Sunglass-2</a></li>
-                      <li><a href="#">Sunglass-3</a></li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-            <h4 class="widget-title">Categories 2</h4>
-            <div class="accordion" id="products-tab" role="tablist" aria-multiselectable="true">
-              <div class="card">            
-                <div class="card-header" role="tab" id="bags-2">
-                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="">
-                        Bags <i class="fa fa-angle-up"></i></a>
-                </div>
-                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="bags">
-                    <ul class="card-body">
-                      <li><a href="#">Bags-1</a></li>
-                      <li><a href="#">Bags-2</a></li>
-                      <li><a href="#">Bags-3</a></li>
-                    </ul>
-                </div>
-              </div>
- 
-              <div class="card">            
-                <div class="card-header" role="tab" id="sunglass">
-                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Sunglass <i class="fa fa-angle-up"></i></a>
-                </div>
-                <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="sunglass" data-parent="#accordionEx">
-                    <ul class="card-body">
-                      <li><a href="#">Sunglass-1</a></li>
-                      <li><a href="#">Sunglass-2</a></li>
-                      <li><a href="#">Sunglass-3</a></li>
-                    </ul>
-                </div>
-              </div>
-            </div>
-          </div> -->
-        </div>
-        <div class="col-md-9 col-sm-12 col-xs-12 pull-right">
-            <div class="row products">
-              <div *ngFor="let product of this.productList" class="col-xs-6 col-sm-6 col-md-3 product text-center product-padding">
-                <div class="product-inner centered-box" routerLink="/product-details/{{product.productId}}"> 
-                  <a href="#" class="product-image">
-                    <div class="product-labels">
-                      <span *ngIf="product.newProduct" class="new-label title-h6">New</span>
-                      <span *ngIf="product.quantity <= 0" class="out-of-stock-label title-h6">Out <span class="small">of stock</span></span>
-                    </div> 
-                    <span class="product-image-inner"> 
-                      <picture> 
-                        <img *ngIf="(product.image!=null)" src="data:image/png;base64,{{product.image}}" class="attachment-thegem_shop_catalog" alt=""> 
-                        <img *ngIf="(product.image==null)" src="/assets/image/noImage.png" class="attachment-thegem_shop_catalog" alt=""> 
-                      </picture> 
-                      <picture> 
-                       <img src="assets/image/smoke-logo_small.png" class="attachment-$size woo-product-hover" alt=""> 
-                      </picture> 
-                    </span> 
-                  </a>
-                  <div class="product-info clearfix">
-                    <div class="product-rating product-rating-empty">
-                      <div class="empty-rating"></div>
-                    </div>
-                    <div class="product-title title-h6">
-                      <a href="#">{{product.description}}</a>
-                    </div>
-                    <div class="product-price">
-                      <span class="price">
-                        <span class="woocommerce-Price-amount amount">
-                          <span class="woocommerce-Price-currencySymbol">$</span>
-                          {{product.retail}}
-                        </span>
-                      </span>
-                    </div>
-                    <!-- <input type="text" class="form-control" placeholder="Enter">
-                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart"> -->
-                  </div>
-                </div>
+  <main class="main-content container" role="main">
+    <div class="row mt-50 mb-50">
+      <div class="col-md-3 col-sm-12 col-xs-12">
+        <div class="categories_slidebar">
+          <h4 class="widget-title">Shop By Brands</h4>
+          <div class="accordion">
+            <div class="card" *ngFor="let brand of this.brandList">
+              <div class="card-header" id="products-tab">
+                <a data-toggle="collapse" data-parent="#products-tab" href="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne" class="">
+                  {{brand.brandName}}
+                  <i class="fa fa-angle-up"></i>
+                </a>
               </div>
             </div>
           </div>
+          <h4 class="widget-title">Shop By Categories</h4>
+          <div class="accordion">
+            <div class="card" *ngFor="let category of this.categoryList; let index = index">
+              <div class="card-header" id="products-tab-cat">
+                <a data-toggle="collapse" data-parent="#products-tab-cat" href="#collapseOne-{{index}}-cat"
+                  aria-expanded="true" aria-controls="collapseOne" class="">
+                  {{category.name}}
+                  <i class="fa fa-angle-up"></i>
+                </a>
+              </div>
+
+              <div *ngFor="let subCategory of category.subCategoryDaoList;" id="collapseOne-{{index}}-cat" class="collapse in"
+                role="tabpanel" aria-labelledby="bags">
+                <ul class="card-body">
+                  <li>
+                    <a href="#">{{subCategory.name}}</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+
+      <!-- End of side bar -->
+
+      <!-- start of main product list view -->
+      <div class="col-md-9 col-sm-12 col-xs-12 pull-right">
+        <div class="row products">
+          <div *ngFor="let product of this.productList" class="col-xs-6 col-sm-6 col-md-3 product text-center product-padding">
+            <div class="product-inner centered-box" (click)="this.setSelectedProduct(product)" data-toggle="modal"
+              data-target=".bd-example-modal-lg">
+              <a class="product-image">
+                <div class="product-labels">
+                  <span *ngIf="product.newProduct" class="new-label title-h6">New</span>
+                  <span *ngIf="product.quantity <= 0" class="out-of-stock-label title-h6">Out <span class="small">of
+                      stock</span></span>
+                </div>
+                <span class="product-image-inner">
+                  <picture>
+                    <img *ngIf="(product.image!=null)" src="data:image/png;base64,{{product.image}}" class="attachment-thegem_shop_catalog"
+                      alt="">
+                    <img *ngIf="(product.image==null)" src="/assets/image/noImage.png" class="attachment-thegem_shop_catalog"
+                      alt="">
+                  </picture>
+                  <picture>
+                    <img src="assets/image/smoke-logo_small.png" class="attachment-$size woo-product-hover" alt="">
+                  </picture>
+                </span>
+              </a>
+              <div class="product-info clearfix">
+                <div class="product-rating product-rating-empty">
+                  <div class="empty-rating"></div>
+                </div>
+                <div class="product-title title-h6">
+                  <a href="#">{{product.description}}</a>
+                </div>
+                <div class="product-price">
+                  <span class="price">
+                    <span class="woocommerce-Price-amount amount">
+                      <span class="woocommerce-Price-currencySymbol">$</span>
+                      {{product.retail}}
+                    </span>
+                  </span>
+                </div>
+                <!-- <input type="text" class="form-control" placeholder="Enter">
+                    <input class="ptn-primary btn btn-block mt-10" type="submit" value="Add to the cart"> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </main>
+</div>
+
+
+<!-- Product Details page model -->
+<div *ngIf="this.selectedProduct" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{this.selectedProduct.description}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="container">
+        <!-- <section class="Product-details"> -->
+        <div class="row">
+          <div class="col-sm-6 col-xs-6">
+            <div class="products_image">
+              <img class="cloudzoom addToCart-button" id="zoom2" src="data:image/png;base64,{{this.selectedProduct.image}}" data-cloudzoom="zoomImage: 'assets/image/large/image1.jpg', zoomPosition:'inside', zoomOffsetX:0 " alt="">
+              <!-- <ul id="slider1" class="owl-carousel owl-theme">
+                <li class="item"><img class='cloudzoom-gallery' src="assets/image/product-details.jpg" data-cloudzoom="useZoom:'#zoom2', image:'assets/image/large/image1.jpg' "></li>
+                <li class="item"><img class='cloudzoom-gallery' src="assets/image/product-details.jpg" data-cloudzoom="useZoom:'#zoom2', image:'assets/image/large/image2.jpg' "></li>
+                <li class="item"><img class='cloudzoom-gallery' src="assets/image/product-details.jpg" data-cloudzoom="useZoom:'#zoom2', image:'assets/image/large/image3.jpg' "></li>
+                <li class="item"><img class='cloudzoom-gallery' src="assets/image/product-details.jpg" data-cloudzoom="useZoom:'#zoom2', image:'assets/image/large/image4.jpg' "></li>
+                <li class="item"><img class='cloudzoom-gallery' src="assets/image/product-details.jpg" data-cloudzoom="useZoom:'#zoom2', image:'assets/image/large/image5.jpg' "></li>
+                <li class="item"><img class='cloudzoom-gallery' src="assets/image/product-details.jpg" data-cloudzoom="useZoom:'#zoom2', image:'assets/image/large/image6.jpg' "></li>
+              </ul> -->
+            </div>
+          </div>
+            <div class="col-sm-6 col-xs-6 product-description">
+              <h3>{{this.selectedProduct.description}}</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the printing and typesetting Ipsum has been the industry's.</p>
+              <p><strong>SKU:</strong>{{this.selectedProduct.productNo}}</p>
+              <!-- <h6 class="title-price"><small>PRECIO OFERTA</small></h6> -->
+              <!-- <h4 class="mt-0"><strong>U$S 399</strong></h4> -->
+              <!-- Botones de compra -->
+              </div>
+              </div>
+              <div class="row">
+
+              <div class="section" style="padding-bottom:20px;">
+                <button class="btn btn-success addToCart-button">
+                  <span style="margin-right:10px" class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+
+              <div class="row">
+                <div class="col-sm-12 col-xs-12">
+
+              <div class="table-responsive">
+                <table class="table product-table" width="100%">
+                  <thead>
+                    <tr>
+                      <th>IMAGE</th>
+                      <th>PRODUCT NO</th>
+                      <th>COLOR</th>
+                      <th>PRICE</th>
+                      <th>QUANTITY</th>
+                      <!-- <th>ADD</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let variant of this.productVariantList">
+                      <td>
+                        <img *ngIf="(this.selectedProduct.image!=null)" src="data:image/png;base64,{{this.selectedProduct.image}}" height="60" width="60">
+                        <!-- <img *ngIf="(variant.image==null)" src="/assets/image/noImage.png" class="attachment-thegem_shop_catalog" height="60" width="60" alt=""> -->
+                      </td>
+                      <td>{{variant.productNo}}</td>
+                      <td>{{variant.value1}}</td>
+                      <td>$ {{variant.retail}}</td>
+                      <td><input type="number" name="quantity" class="form-control"></td>
+                      <!-- <td><button class="buy-table-button">BUY</button></td> -->
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            </div>
+              <div class="section" style="padding-bottom:20px;">
+                  <button class="btn btn-success">
+                    <span style="margin-right:10px" class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    Add to Cart
+                  </button>
+                </div>
+          </div>
+
+          <!-- <div class="col-xs-12">
+                                <div class="tabs">
+                                <div class="tab-button-outer">
+                                  <ul id="tab-button">
+                                    <li><a href="#tab01">Details</a></li>
+                                    <li><a href="#tab02">Description</a></li>
+                                    <li><a href="#tab03">Policies</a></li>
+                                  </ul>
+                                </div>
+                                <div id="tab01" class="tab-contents">
+                                  <p>· California Proposition 65: This product contains nicotine, a chemical known to the state of California to cause birth defects or other reproductive harm.</p>
+                                  <p>· Nicotine warning: Nicotine is a highly addictive substance and can be poisonous, with serious health consequences including death. You should not use this product if you have any underlying medical conditions which may be aggravated or exacerbated by this product. Nicotine is extremely habit forming. You may experience withdrawal symptoms after stopping the use of this product. Some of the side effects of nicotine use may include irregular heartbeat, changes in blood pressure, inflammation of blood vessels, chest pain, depression, shortness of breath, sweating, dizziness, throat irritation, rash, swelling, nose bleed, diarrhea, headache, and dry mouth. Consult your physician prior to using this product. Nicotine is quickly absorbed with skin contact. Keep away from skin, eyes, mouth, and any other area of the body. In the event that you come into contact with nicotine, wash the affected area with soap and water for at least 15 minutes, and immediately contact your local Poison Control Center.</p>
+                                  <p>· Drug interactions: Nicotine may interact with certain pharmaceutical drugs. Consult your physician or pharmacist prior to use to avoid serious complications.</p>
+                                  <p>· Please do not puncture cartridges or drink the e-liquids.</p>
+                                  <p>· Ingestion of the non-vaporized concentrated ingredients in the e-liquids purchased from EC Supply Inc. can be poisonous.</p>
+                                  <p>· Use this product in moderation. Failure to do so may result in nicotine overdose.</p>
+                                  <p>· E-liquids may contain trace amounts of nuts, gluten, sugar, or other sweeteners in the flavoring. Flavorings may also contain artificial colors, artificial flavors, and artificial sweeteners.</p>
+                                  <p>· Do not use this product if you are allergic or sensitive to any of the common ingredients of e-liquid, such as propylene glycol, vegetable glycerin, nicotine, and food/beverage flavorings. A small percentage of people have allergies to propylene glycol, present in many, but not all, e-liquids.</p>
+                                  <p>· You must be of legal smoking age in your jurisdiction to use this product.</p>
+                                  <p>· Not for use by women who are nursing, pregnant, or are planning to become pregnant.</p> </div>
+                                </div>
+                                <div id="tab02" class="tab-contents">
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quos aliquam consequuntur, esse provident impedit minima porro! Laudantium laboriosam culpa quis fugiat ea, architecto velit ab, deserunt rem quibusdam voluptatum.</p>
+                                </div>
+                                <div id="tab03" class="tab-contents">
+                                  <p>This is Policies tab content</p>
+                                </div>
+                          </div> -->
+        </div>
+        <!-- </section> -->
+      </div>
+      <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+    </div>
+

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { SharedService, Category, WebBrandDto } from '../../shared/shared.service';
+import { Customer } from '../../customer/signup/signup.component';
 
 @Component({
   selector: 'app-product',
@@ -13,6 +14,9 @@ export class ProductListComponent implements OnInit {
   productList : Product[] = [];
   categoryList: Category[] = [];
   brandList: WebBrandDto[] = [];
+  selectedProduct: Product;
+  productVariantList: ProductVariant[] = [];
+
   constructor(private productService: ProductService, 
     private router: Router, 
     private route: ActivatedRoute,
@@ -64,6 +68,36 @@ export class ProductListComponent implements OnInit {
       this.productList = product;
       this.productList = this.productList.slice();
     })
+  }
+
+  setSelectedProduct(product : Product) {
+    this.selectedProduct = product;
+
+    this.getProductVariantDetails(product.productId);
+    console.log('selected product', this.selectedProduct);
+  }
+
+  getProductVariantDetails(productId:number) {
+    this.productService.getProductVariantDetailsByProductId(productId)
+    .subscribe((variantList: ProductVariant[])=>{
+      
+      let selectedCustomer:Customer = this.sharedService.getCustomerDetailsForSale();
+
+      if(selectedCustomer){
+        variantList.forEach((variant)=>{
+          if(selectedCustomer.tier == 3){
+            variant.retail = variant.tier3;
+          }
+          else if(selectedCustomer.tier == 2){
+            variant.retail = variant.tier2;
+          }
+          else if(selectedCustomer.tier == 1){
+            variant.retail = variant.tier1;
+          }
+        });
+      }
+      this.productVariantList = variantList;
+    });
   }
 
   getMenuDetails() {
