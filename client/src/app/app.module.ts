@@ -11,6 +11,7 @@ import { CheckoutModule } from './checkout/checkout.module';
 import { AdminModule } from './admin/admin.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerModule } from './customer/customer.module';
+import { GlobalService } from './global.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { CustomerModule } from './customer/customer.module';
     BrowserAnimationsModule
   ],
   exports: [SharedModule],
-  providers: [],
+  providers: [GlobalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

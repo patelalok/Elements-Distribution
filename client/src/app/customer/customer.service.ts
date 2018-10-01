@@ -11,6 +11,7 @@ import { environment } from '../../environments/environment.prod';
 export class CustomerService {
 
   private url: string;
+  private customerDetails: any;
 
   constructor(private http: HttpClient) {
     this.url = environment.productUrl;
@@ -43,5 +44,27 @@ export class CustomerService {
      .subscribe((test) =>{
        console.log('test', test);
      })
+  }
+  public getToken(): String {
+    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    var token = currentUser && currentUser.token;
+
+    console.log('token from service', token);
+    return token ? token : "";
+  }
+
+  setCustomerDetailsForSale(obj: any): void {
+    this.customerDetails = obj;
+    localStorage.setItem('customerDetails', JSON.stringify(obj));
+  }
+
+  getCustomerDetailsForSale(): any {
+    this.customerDetails = JSON.parse(localStorage.getItem('customerDetails'));
+    return this.customerDetails;
+  }
+  
+  clearCustomer(): void {
+    localStorage.removeItem('customerDetails');
   }
 }

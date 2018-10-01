@@ -3,6 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { SharedService, Category, WebBrandDto } from '../../shared/shared.service';
 import { Customer } from '../../customer/signup/signup.component';
+import * as moment from 'moment';
+import { GlobalService } from '../../global.service';
+
 
 @Component({
   selector: 'app-product',
@@ -20,7 +23,8 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService, 
     private router: Router, 
     private route: ActivatedRoute,
-    private sharedService: SharedService) { }
+    private sharedService: SharedService,
+    private globalService: GlobalService) { }
 
   ngOnInit() {
 
@@ -100,6 +104,40 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  addAllProducts()
+  {
+    let productOrderedList: Product[] =[];
+    // let selectedCustomer: Customer = this.persistService.getCustomerDetailsForSale();
+
+    this.productVariantList.forEach((addedProductVariant)=>{
+
+      let productFromVariant = new Product;
+      productFromVariant.productId = addedProductVariant.productId;
+      productFromVariant.productNo = addedProductVariant.productNo;
+      productFromVariant.retail = addedProductVariant.retailWithDiscount;
+      
+      
+      if(addedProductVariant.saleQuantity > 0) {
+        // addedProduct.customerPhoneNo = selectedCustomer.phoneNo;
+        addedProductVariant.status = 'Online';
+        addedProductVariant.date = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
+       // productOrderedList.push(addedProductVariant);
+      }
+    });
+   let rep = this.globalService.addAllProductToCart(productOrderedList);
+
+   console.log('response', rep);
+// Now I need to set sale quantity to 0 so user won't buy same product again.
+
+    // this.productList.forEach((addedProduct)=>{
+    //   if(addedProduct.saleQuantity > 0) {
+    //     addedProduct.saleQuantity = 0;
+    //   }
+    // });
+  
+    this.globalService.getPurchasedProductList();
+
+  }
   getMenuDetails() {
 
     // this.loadingService.loading = true;

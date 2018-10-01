@@ -36,7 +36,7 @@
               "src/css/animate.css",
               "src/css/featured.css",
               "src/css/owl-carousel.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
 
             ],
             "scripts": [

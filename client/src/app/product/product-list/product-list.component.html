@@ -109,7 +109,8 @@
         <div class="row">
           <div class="col-sm-6 col-xs-6">
             <div class="products_image">
-              <img class="cloudzoom addToCart-button" id="zoom2" src="data:image/png;base64,{{this.selectedProduct.image}}" data-cloudzoom="zoomImage: 'assets/image/large/image1.jpg', zoomPosition:'inside', zoomOffsetX:0 " alt="">
+              <img class="cloudzoom addToCart-button" id="zoom2" src="data:image/png;base64,{{this.selectedProduct.image}}"
+                data-cloudzoom="zoomImage: 'assets/image/large/image1.jpg', zoomPosition:'inside', zoomOffsetX:0 " alt="">
               <!-- <ul id="slider1" class="owl-carousel owl-theme">
                 <li class="item"><img class='cloudzoom-gallery' src="assets/image/product-details.jpg" data-cloudzoom="useZoom:'#zoom2', image:'assets/image/large/image1.jpg' "></li>
                 <li class="item"><img class='cloudzoom-gallery' src="assets/image/product-details.jpg" data-cloudzoom="useZoom:'#zoom2', image:'assets/image/large/image2.jpg' "></li>
@@ -120,70 +121,70 @@
               </ul> -->
             </div>
           </div>
-            <div class="col-sm-6 col-xs-6 product-description">
-              <h3>{{this.selectedProduct.description}}</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the printing and typesetting Ipsum has been the industry's.</p>
-              <p><strong>SKU:</strong>{{this.selectedProduct.productNo}}</p>
-              <!-- <h6 class="title-price"><small>PRECIO OFERTA</small></h6> -->
-              <!-- <h4 class="mt-0"><strong>U$S 399</strong></h4> -->
-              <!-- Botones de compra -->
-              </div>
-              </div>
-              <div class="row">
+          <div class="col-sm-6 col-xs-6 product-description">
+            <h3>{{this.selectedProduct.description}}</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the printing and typesetting Ipsum has been the industry's.</p>
+            <p><strong>SKU:</strong>{{this.selectedProduct.productNo}}</p>
+            <!-- <h6 class="title-price"><small>PRECIO OFERTA</small></h6> -->
+            <!-- <h4 class="mt-0"><strong>U$S 399</strong></h4> -->
+            <!-- Botones de compra -->
+          </div>
+        </div>
+        
+        <hr>
 
-              <div class="section" style="padding-bottom:20px;">
-                <button class="btn btn-success addToCart-button">
-                  <span style="margin-right:10px" class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-
-
-              <div class="row">
-                <div class="col-sm-12 col-xs-12">
-
-              <div class="table-responsive">
-                <table class="table product-table" width="100%">
-                  <thead>
-                    <tr>
-                      <th>IMAGE</th>
-                      <th>PRODUCT NO</th>
-                      <th>COLOR</th>
-                      <th>PRICE</th>
-                      <th>QUANTITY</th>
-                      <!-- <th>ADD</th> -->
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let variant of this.productVariantList">
-                      <td>
-                        <img *ngIf="(this.selectedProduct.image!=null)" src="data:image/png;base64,{{this.selectedProduct.image}}" height="60" width="60">
-                        <!-- <img *ngIf="(variant.image==null)" src="/assets/image/noImage.png" class="attachment-thegem_shop_catalog" height="60" width="60" alt=""> -->
-                      </td>
-                      <td>{{variant.productNo}}</td>
-                      <td>{{variant.value1}}</td>
-                      <td>$ {{variant.retail}}</td>
-                      <td><input type="number" name="quantity" class="form-control"></td>
-                      <!-- <td><button class="buy-table-button">BUY</button></td> -->
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            </div>
-              <div class="section" style="padding-bottom:20px;">
-                  <button class="btn btn-success">
-                    <span style="margin-right:10px" class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                    Add to Cart
-                  </button>
-                </div>
+        <div class="section" style="padding-bottom:20px;">
+            <button class="btn btn-success">
+              <span style="margin-right:10px" class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              Add All to Cart
+            </button>
           </div>
 
-          <!-- <div class="col-xs-12">
+        <div class="row">
+          <div class="col-sm-12 col-xs-12">
+
+            <div class="table-responsive">
+              <table class="table product-table" width="100%">
+                <thead>
+                  <tr>
+                    <th>IMAGE</th>
+                    <th>PRODUCT NO</th>
+                    <th>COLOR</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <!-- <th>ADD</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let variant of this.productVariantList">
+                    <td>
+                      <img *ngIf="(this.selectedProduct.image!=null)" src="data:image/png;base64,{{this.selectedProduct.image}}"
+                        height="60" width="60">
+                      <!-- <img *ngIf="(variant.image==null)" src="/assets/image/noImage.png" class="attachment-thegem_shop_catalog" height="60" width="60" alt=""> -->
+                    </td>
+                    <td>{{variant.productNo}}</td>
+                    <td>{{variant.value1}}</td>
+                    <td>$ {{variant.retail}}</td>
+                    <td><input type="number" name="quantity" class="form-control"></td>
+                    <!-- <td><button class="buy-table-button">BUY</button></td> -->
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+        <div class="section" style="padding-bottom:20px;">
+          <button class="btn btn-success">
+            <span style="margin-right:10px" class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            Add All to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- <div class="col-xs-12">
                                 <div class="tabs">
                                 <div class="tab-button-outer">
                                   <ul id="tab-button">
@@ -211,12 +212,11 @@
                                   <p>This is Policies tab content</p>
                                 </div>
                           </div> -->
-        </div>
-        <!-- </section> -->
-      </div>
-      <!-- <div class="modal-footer">
+    </div>
+    <!-- </section> -->
+  </div>
+  <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
         </div> -->
-    </div>
-
+</div>
